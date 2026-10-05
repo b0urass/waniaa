@@ -6,7 +6,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="theme-color" content="#0a0a12">
-<title>AdForge iOS — Publicité IA 30s</title>
+<title>Conciergerie Ads — Vidéo de présentation IA</title>
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 :root {
@@ -31,7 +31,7 @@ header { margin-bottom: 1.5rem; text-align: center; padding: 0.5rem 0 1rem; posi
 header::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 1px; background: linear-gradient(90deg, transparent, var(--yellow), transparent); }
 h1 { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; margin-bottom: 0.3rem; background: linear-gradient(135deg, var(--orange), var(--yellow), var(--mint), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .subtitle { font-size: 0.85rem; color: var(--ink-dim); font-style: italic; }
-.toast { position: fixed; top: calc(1rem + var(--safe-top)); left: 50%; transform: translateX(-50%) translateY(-120px); background: var(--night-3); border: 1px solid var(--border); border-left: 3px solid var(--yellow); padding: 0.85rem 1.2rem; border-radius: var(--radius); font-size: 0.82rem; z-index: 1000; opacity: 0; transition: transform 0.3s, opacity 0.3s; max-width: 90vw; display: flex; gap: 0.5rem; }
+.toast { position: fixed; top: calc(1rem + var(--safe-top)); left: 50%; transform: translateX(-50%) translateY(-120px); background: var(--night-3); border: 1px solid var(--border); border-left: 3px solid var(--yellow); padding: 0.85rem 1.2rem; border-radius: var(--radius); font-size: 0.82rem; z-index: 1000; opacity: 0; transition: transform 0.3s, opacity 0.3s; max-width: 90vw; }
 .toast.visible { transform: translateX(-50%) translateY(0); opacity: 1; }
 .toast.success { border-left-color: var(--success); }
 .toast.error { border-left-color: var(--error); }
@@ -51,26 +51,27 @@ h1 { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; margin-b
 .badge.soft { border-color: var(--blue); color: var(--blue-soft); }
 .badge.error { border-color: var(--error); color: var(--error); }
 .section-body { max-height: 0; overflow: hidden; transition: max-height 0.3s; }
-.section.open .section-body { max-height: 3000px; }
+.section.open .section-body { max-height: 4000px; }
 .section.open .chevron { transform: rotate(180deg); }
 .chevron { font-size: 0.7rem; color: var(--ink-faint); transition: transform 0.3s; }
 .section-content { padding: 0 1.1rem 1.1rem; }
-.product-input { width: 100%; min-height: 80px; padding: 0.8rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--night-2); color: var(--ink); font-size: 0.88rem; resize: vertical; }
-.product-input:focus { outline: none; border-color: var(--lavender); }
-.ref-drop { border: 2px dashed var(--border); border-radius: var(--radius); padding: 1rem; background: var(--night-2); text-align: center; cursor: pointer; position: relative; margin-bottom: 0.5rem; }
-.ref-drop input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
-.ref-icon { font-size: 1.4rem; opacity: 0.5; }
-.ref-text { font-size: 0.78rem; color: var(--ink-dim); }
-.ref-text strong { color: var(--yellow-soft); }
-.ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 0.3rem; }
-.ref-thumb { position: relative; border-radius: 4px; overflow: hidden; aspect-ratio: 1; }
-.ref-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.ref-thumb .rm { position: absolute; top: 2px; right: 2px; width: 18px; height: 18px; background: rgba(200,90,74,0.9); color: #fff; border: none; border-radius: 50%; font-size: 10px; }
+.info-input { width: 100%; min-height: 70px; padding: 0.8rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--night-2); color: var(--ink); font-size: 0.85rem; resize: vertical; margin-bottom: 0.5rem; }
+.info-input:focus { outline: none; border-color: var(--lavender); }
+.info-hint { font-size: 0.68rem; color: var(--ink-dim); margin-bottom: 0.8rem; line-height: 1.4; }
 .control-row { margin-bottom: 0.8rem; }
 .control-label { display: block; font-size: 0.68rem; color: var(--ink-dim); margin-bottom: 0.3rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
 select, input[type="text"] { width: 100%; padding: 0.75rem; border-radius: var(--radius); border: 1px solid var(--border); background: var(--night-2); color: var(--ink); font-size: 0.85rem; -webkit-appearance: none; }
 select { background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='%23e5c15a' d='M0 0l5 6 5-6z'/></svg>"); background-repeat: no-repeat; background-position: right 0.8rem center; }
 select:focus { outline: none; border-color: var(--blue); }
+.ref-drop { border: 2px dashed var(--border); border-radius: var(--radius); padding: 0.9rem; background: var(--night-2); text-align: center; cursor: pointer; position: relative; margin-bottom: 0.5rem; }
+.ref-drop input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.ref-icon { font-size: 1.3rem; opacity: 0.5; }
+.ref-text { font-size: 0.75rem; color: var(--ink-dim); }
+.ref-text strong { color: var(--yellow-soft); }
+.ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(60px, 1fr)); gap: 0.3rem; }
+.ref-thumb { position: relative; border-radius: 4px; overflow: hidden; aspect-ratio: 1; }
+.ref-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.ref-thumb .rm { position: absolute; top: 2px; right: 2px; width: 18px; height: 18px; background: rgba(200,90,74,0.9); color: #fff; border: none; border-radius: 50%; font-size: 10px; }
 .btn-primary { width: 100%; padding: 1.1rem; border-radius: var(--radius); border: 1px solid var(--yellow-deep); background: linear-gradient(135deg, rgba(232,123,53,0.2), rgba(229,193,90,0.15)); color: var(--yellow-soft); font-size: 0.9rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; cursor: pointer; margin-bottom: 0.8rem; }
 .btn-primary:disabled { opacity: 0.3; cursor: not-allowed; }
 .btn-stop { width: 100%; padding: 0.8rem; border-radius: var(--radius); border: 1px solid var(--error); background: transparent; color: var(--error); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; cursor: pointer; margin-bottom: 0.8rem; display: none; }
@@ -119,21 +120,15 @@ select:focus { outline: none; border-color: var(--blue); }
 .debug-entry.warn { border-left-color: var(--warn); color: var(--warn); }
 .debug-entry.error { border-left-color: var(--error); color: var(--error); }
 .debug-time { color: var(--ink-faint); margin-right: 0.3rem; }
-.ios-hint { background: rgba(74,123,200,0.1); border: 1px solid var(--blue); border-radius: var(--radius); padding: 0.7rem; font-size: 0.72rem; color: var(--blue-soft); margin-bottom: 0.8rem; display: none; }
-.ios-hint.visible { display: block; }
 #noSleepCanvas { position: fixed; top: 0; left: 0; width: 1px; height: 1px; opacity: 0.01; pointer-events: none; z-index: -1; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1>AdForge iOS</h1>
-  <p class="subtitle">1 prompt → Hook + Contenu + CTA → Vidéo 30s+</p>
+  <h1>Conciergerie Ads</h1>
+  <p class="subtitle">1 description → Vidéo de présentation Hook + Contenu + CTA</p>
 </header>
-
-<div class="ios-hint" id="ios-hint">
-  <strong>📱 Pour que ça marche :</strong> héberge ce fichier sur GitHub Pages ou Netlify, puis ajoute-le à l'écran d'accueil. Ne l'ouvre <em>pas</em> depuis Fichiers (file://).
-</div>
 
 <div class="api-panel">
   <input type="password" class="api-key-input" id="api-key-input" placeholder="Clé API Agnes (sk-...)">
@@ -141,26 +136,27 @@ select:focus { outline: none; border-color: var(--blue); }
   <div class="api-status-line" id="api-status"><span class="status-dot"></span><span id="api-status-text">Aucune clé</span></div>
 </div>
 
-<div class="section open" id="section-product">
-  <div class="section-header" data-toggle="section-product">
-    <span class="section-title">📦 Produit & Promesse <span class="badge error">requis</span></span>
+<div class="section open" id="section-info">
+  <div class="section-header" data-toggle="section-info">
+    <span class="section-title">🏢 Votre conciergerie <span class="badge error">requis</span></span>
     <span class="chevron">▼</span>
   </div>
   <div class="section-body"><div class="section-content">
-    <textarea class="product-input" id="product-input" placeholder="Décrivez votre produit et sa promesse (ex: une app qui réduit le stress en 5 min/jour pour cadres pressés)"></textarea>
+    <textarea class="info-input" id="info-input" placeholder="Décrivez votre conciergerie : ville (Marrakech, Casablanca...), services, avantages, ce qui vous différencie, votre promesse aux propriétaires..."></textarea>
+    <div class="info-hint">💡 Plus vous donnez de détails, plus la vidéo sera précise. Incluez : ville, type de biens (appartements, villas, riads), services (gestion locative, accueil voyageurs, ménage, maintenance), votre promesse (revenus optimisés, zéro tracas, etc.).</div>
   </div></div>
 </div>
 
 <div class="section open" id="section-refs">
   <div class="section-header" data-toggle="section-refs">
-    <span class="section-title">🖼️ Images produit / Logo <span class="badge soft">optionnel</span></span>
+    <span class="section-title">🖼️ Photos de vos biens / Logo <span class="badge soft">optionnel</span></span>
     <span class="chevron">▼</span>
   </div>
   <div class="section-body"><div class="section-content">
     <div class="ref-drop">
       <input type="file" accept="image/*" id="ref-input" multiple>
       <div class="ref-icon">＋</div>
-      <div class="ref-text"><strong>Ajouter des images</strong><br>Photos produit, logo, packshot</div>
+      <div class="ref-text"><strong>Ajouter des photos</strong><br>Biens, équipe, logo...</div>
     </div>
     <div class="ref-grid" id="ref-grid"></div>
   </div></div>
@@ -173,36 +169,41 @@ select:focus { outline: none; border-color: var(--blue); }
   </div>
   <div class="section-body"><div class="section-content">
     <div class="control-row">
-      <label class="control-label">Plateforme</label>
-      <select id="platform-select">
-        <option value="tiktok" selected>TikTok / Reels / Shorts (9:16)</option>
-        <option value="instagram">Instagram Feed (1:1)</option>
-        <option value="youtube">YouTube Pre-roll (16:9)</option>
+      <label class="control-label">Type de vidéo</label>
+      <select id="video-type-select">
+        <option value="presentation" selected>Présentation générale de la conciergerie</option>
+        <option value="advantages">Avantages de travailler avec nous</option>
+        <option value="process">Comment ça marche (notre processus)</option>
+        <option value="testimonial">Témoignage propriétaire</option>
+        <option value="offer">Offre spéciale / Promo</option>
       </select>
     </div>
     <div class="control-row">
       <label class="control-label">Ton</label>
       <select id="tone-select">
-        <option value="direct" selected>⚡ Direct & percutant</option>
-        <option value="chaleureux">🤝 Chaleureux</option>
-        <option value="urgence">⏰ Urgence</option>
-        <option value="premium">✨ Premium</option>
-        <option value="humour">😄 Humoristique</option>
+        <option value="professionnel" selected>💼 Professionnel & rassurant</option>
+        <option value="chaleureux">🤝 Chaleureux & proche</option>
+        <option value="direct">⚡ Direct & percutant</option>
+        <option value="premium">✨ Premium & luxe</option>
+        <option value="urgence">⏰ Urgence / Places limitées</option>
       </select>
     </div>
     <div class="control-row">
       <label class="control-label">Nombre de scènes</label>
       <select id="scene-count-select">
-        <option value="3">3 scènes — ~20s</option>
-        <option value="5" selected>5 scènes — ~35s</option>
-        <option value="7">7 scènes — ~50s</option>
+        <option value="3">3 scènes — ~20 secondes</option>
+        <option value="4">4 scènes — ~27 secondes</option>
+        <option value="5" selected>5 scènes — ~34 secondes</option>
+        <option value="6">6 scènes — ~40 secondes</option>
+        <option value="7">7 scènes — ~47 secondes</option>
       </select>
     </div>
     <div class="control-row">
       <label class="control-label">Durée par scène</label>
       <select id="duration-select">
-        <option value="161" selected>6,7 secondes (161 frames)</option>
-        <option value="241">10 secondes (241 frames)</option>
+        <option value="121">5 secondes</option>
+        <option value="161" selected>6,7 secondes (recommandé)</option>
+        <option value="241">10 secondes</option>
       </select>
     </div>
   </div></div>
@@ -261,7 +262,6 @@ const FRAME_RATE = 24;
 const TEXT_MAX_TOKENS = 4000;
 const TEXT_TEMPERATURE = 0.85;
 
-const IMAGE_PARALLEL = 2;
 const IMAGE_INTERVAL_MS = 3400;
 const VIDEO_INTERVAL_MIN = 62000;
 const VIDEO_INTERVAL_MAX = 90000;
@@ -271,16 +271,15 @@ const VIDEO_FIRST_POLL_DELAY_SEC = 80;
 const VIDEO_POLL_INTERVALS = [8, 8, 12, 12, 20, 20, 25];
 const VIDEO_MAX_POLL_ATTEMPTS = 100;
 
-const API_KEY_STORAGE = 'adforge_api_key';
-const TIMING_CACHE_KEY = 'adforge_timing';
+const API_KEY_STORAGE = 'conciergerie_ads_api_key';
 
 // ══════════════════════════════════════════════════════════════════
 // ÉTAT
 // ══════════════════════════════════════════════════════════════════
 const state = {
-  product: '',
-  platform: 'tiktok',
-  tone: 'direct',
+  info: '',
+  videoType: 'presentation',
+  tone: 'professionnel',
   sceneCount: 5,
   durationFrames: 161,
   referenceImages: [],
@@ -388,12 +387,12 @@ function updateApiPanel() {
 function updateGenerateBtn() {
   const btn = $('generate-btn');
   const hasKey = !!getApiKey();
-  const hasProduct = state.product.trim().length >= 20;
-  btn.disabled = !hasKey || !hasProduct || state.isRunning;
+  const hasInfo = state.info.trim().length >= 30;
+  btn.disabled = !hasKey || !hasInfo || state.isRunning;
   if (state.isRunning) btn.textContent = 'Génération en cours…';
   else if (!hasKey) btn.textContent = 'Ajoutez votre clé API';
-  else if (!hasProduct) btn.textContent = 'Décrivez votre produit (20 car. min)';
-  else btn.textContent = '🚀 Générer la publicité (' + state.sceneCount + ' scènes)';
+  else if (!hasInfo) btn.textContent = 'Décrivez votre conciergerie (30 car. min)';
+  else btn.textContent = '🚀 Générer la vidéo (' + state.sceneCount + ' scènes)';
 }
 
 // ══════════════════════════════════════════════════════════════════
@@ -478,7 +477,7 @@ function salvageScript(text) {
     content: content ? content[1].replace(/\\"/g, '"') : '',
     cta: cta ? cta[1].replace(/\\"/g, '"') : '',
     scenes: [],
-    visual_style: 'clean commercial photography, soft studio lighting'
+    visual_style: 'professional real estate photography, warm natural light, elegant Moroccan architecture'
   };
 }
 
@@ -505,32 +504,60 @@ function extractJson(text) {
 // PROMPTS
 // ══════════════════════════════════════════════════════════════════
 function buildScriptPrompt() {
-  const platformLabels = { tiktok: 'TikTok/Reels/Shorts — vertical 9:16', instagram: 'Instagram Feed — carré', youtube: 'YouTube Pre-roll — 16:9' };
-  const toneLabels = { direct: 'direct, percutant, phrases courtes', chaleureux: 'chaleureux, rassurant, empathique', urgence: 'urgence, rareté, FOMO', premium: 'premium, aspirationnel, soigné', humour: 'décalé, humoristique, surprise' };
+  const toneLabels = {
+    professionnel: 'professionnel, rassurant, sérieux, expert',
+    chaleureux: 'chaleureux, proche, humain, à l\'écoute',
+    direct: 'direct, percutant, phrases courtes, efficacité',
+    premium: 'premium, luxe, aspirationnel, exclusif',
+    urgence: 'urgence, rareté, places limitées, FOMO'
+  };
+  const typeLabels = {
+    presentation: 'Présentation générale : qui vous êtes, ce que vous faites, votre promesse aux propriétaires',
+    advantages: 'Avantages : pourquoi un propriétaire doit choisir votre conciergerie plutôt qu\'une autre ou qu\'une gestion seul',
+    process: 'Comment ça marche : votre processus étape par étape, de A à Z, pour rassurer le propriétaire',
+    testimonial: 'Témoignage : un propriétaire raconte comment votre conciergerie a transformé son investissement',
+    offer: 'Offre spéciale : une promotion limitée, un avantage exclusif pour les nouveaux propriétaires'
+  };
   const sceneCount = state.sceneCount;
   const hookScenes = Math.max(1, Math.floor(sceneCount * 0.2));
   const contentScenes = Math.max(1, Math.floor(sceneCount * 0.6));
   const ctaScenes = sceneCount - hookScenes - contentScenes;
+
   return [
-    'You are a world-class advertising copywriter specialized in short-form video ads.',
+    'You are a world-class advertising copywriter specialized in real estate and property management (conciergerie) ads for the Moroccan market.',
     '',
-    'PRODUCT / PROMISE: ' + state.product.trim(),
-    'TARGET PLATFORM: ' + platformLabels[state.platform],
+    'CONTEXT ABOUT THE CONCIERGERIE:',
+    state.info.trim(),
+    '',
+    'VIDEO TYPE: ' + typeLabels[state.videoType],
     'TONE: ' + toneLabels[state.tone],
     '',
     'Write a structured ad script with EXACTLY ' + sceneCount + ' scenes:',
-    '- ' + hookScenes + ' scene(s) for the HOOK (stop the scroll)',
-    '- ' + contentScenes + ' scene(s) for the CONTENT (benefit, differentiation, proof)',
-    '- ' + ctaScenes + ' scene(s) for the CTA (clear action)',
+    '- ' + hookScenes + ' scene(s) for the HOOK (stop the scroll, call out the property owner directly)',
+    '- ' + contentScenes + ' scene(s) for the CONTENT (benefits, differentiation, proof, trust)',
+    '- ' + ctaScenes + ' scene(s) for the CTA (clear action: DM, comment, form)',
     '',
-    'Return JSON with:',
+    'CRITICAL RULES:',
+    '- Language: FRENCH (the property owners are French-speaking)',
+    '- Voice-over style: spoken by the conciergerie founder, confident, warm, expert',
+    '- NO music in the video (ambient sounds + voice-over only)',
+    '- Each scene is short (max 15 words spoken)',
+    '- Hook must call out the property owner directly in the first 3 seconds',
+    '- CTA must be ONE single clear action (DM "INFO", comment "PLAN", or "Réservez un appel")',
+    '- Do NOT mention prices unless explicitly in the context',
+    '- Do NOT use generic phrases like "le chemin est long" or "écoutez votre cœur"',
+    '',
+    'ALSO RETURN:',
+    '- "visual_style": an English prompt describing the visual aesthetic (e.g. "elegant Moroccan riad interior, warm golden light, shallow depth of field, cinematic")',
+    '',
+    'OUTPUT FORMAT (exact JSON, nothing else):',
     '{',
-    '  "hook": "the hook sentence",',
-    '  "content": "the content section (2-3 sentences)",',
-    '  "cta": "the call to action (short)",',
+    '  "hook": "the hook sentence in French",',
+    '  "content": "the content section in French (2-3 sentences)",',
+    '  "cta": "the call to action in French",',
     '  "visual_style": "english visual style prompt",',
     '  "scenes": [',
-    '    { "label": "hook|content|cta", "text": "what the voice-over says", "visual": "english image prompt" }',
+    '    { "label": "hook|content|cta", "text": "what the voice-over says in French", "visual": "english image prompt for this scene" }',
     '  ]',
     '}',
     '',
@@ -540,37 +567,39 @@ function buildScriptPrompt() {
 
 function buildImagePrompt(scene, index, total) {
   const refContext = state.referenceImages.length > 0
-    ? 'Use the provided reference images as visual style and product appearance reference. '
+    ? 'Use the provided reference images as visual style, brand colors, and property appearance reference. Maintain visual consistency with the references. '
     : '';
   return [
-    'Professional advertising photography for a ' + state.platform + ' video ad.',
+    'Professional advertising photography for a Moroccan real estate conciergerie video ad.',
     'Scene ' + (index + 1) + ' of ' + total + ' (' + scene.label.toUpperCase() + ')',
     'Voice-over context: "' + scene.text + '"',
     refContext,
-    'Visual: ' + (scene.visual || 'clean commercial shot') + '.',
-    'Style: ' + (state.script && state.script.visual_style ? state.script.visual_style : 'clean commercial photography'),
-    'Format: portrait 9:16 vertical, 4K, no text, no watermark.'
+    'Visual: ' + (scene.visual || 'elegant Moroccan property, warm golden light') + '.',
+    'Style: ' + (state.script && state.script.visual_style ? state.script.visual_style : 'professional real estate photography, elegant Moroccan architecture, warm natural light'),
+    'Mood: trust, elegance, professionalism, Moroccan warmth.',
+    'Format: portrait 9:16 vertical, high-end real estate photography, no text, no watermark, no logo overlay.'
   ].join('\n');
 }
 
 function buildVideoPrompt(scene, index, total) {
   const sceneContext = scene.label === 'hook'
-    ? 'OPENING shot. GRAB attention immediately.'
+    ? 'OPENING shot. GRAB attention immediately — a striking visual of an elegant Moroccan property, a property owner looking at their phone, or a confident professional speaking to camera.'
     : scene.label === 'content'
-    ? 'MIDDLE shot. ILLUSTRATE the benefit clearly.'
-    : 'CLOSING shot. SETTLE and invite action.';
+    ? 'MIDDLE shot. ILLUSTRATE the benefit clearly — a beautiful property being managed, happy guests arriving, a clean and prepared apartment, data visualizations of revenue.'
+    : 'CLOSING shot. SETTLE and invite action — the founder speaking directly to camera, or an elegant final shot of a Moroccan property with a warm golden hour light.';
   const refContext = state.referenceImages.length > 0
-    ? 'Maintain product consistency from reference images. '
+    ? 'Maintain visual consistency with the provided reference images (brand colors, properties, style). '
     : '';
   return [
-    'CRITICAL: The provided first frame is the EXACT first frame. Smoothly animate from there.',
+    'CRITICAL: This is a short conciergerie advertisement video. The provided first frame is the EXACT first frame. Smoothly animate from there.',
     refContext,
     'Scene ' + (index + 1) + '/' + total + ' — ' + scene.label.toUpperCase() + ': "' + scene.text + '"',
     sceneContext,
-    'Camera: smooth controlled commercial movement, shallow depth of field.',
-    'AUDIO: NO MUSIC. Soft ambient sounds only. Whispered voice-over: "' + scene.text + '"',
-    'ATMOSPHERE: professional advertising, clean and premium.',
-    'FORMAT: Portrait 9:16 vertical, 24fps, no text, no watermarks, no music.'
+    'Movement intensity: subtle to moderate, elegant, professional, controlled.',
+    'Camera: smooth controlled commercial cinematography, shallow depth of field, product hero framing, elegant slow movements.',
+    'AUDIO: ABSOLUTELY NO MUSIC. ONLY ambient natural sounds — soft Moroccan breeze, distant call to prayer, gentle footsteps on tile, birds, subtle room tone. A confident French voice-over (not lip-synced) speaks: "' + scene.text + '" — calm, expert, warm.',
+    'ATMOSPHERE: professional Moroccan real estate conciergerie, elegant, trustworthy, premium but warm. ' + (state.script && state.script.visual_style ? state.script.visual_style : 'warm golden Moroccan light, elegant architecture'),
+    'FORMAT: Portrait 9:16 vertical, 24fps, photorealistic, commercial quality, no text, no subtitles, no watermarks, no music, no on-screen graphics.'
   ].join(' ');
 }
 
@@ -598,7 +627,7 @@ async function generateScript() {
   const body = {
     model: MODEL_TEXT,
     messages: [
-      { role: 'system', content: 'You ALWAYS return valid JSON matching the schema. All strings on single lines.' },
+      { role: 'system', content: 'You are a world-class advertising copywriter specialized in Moroccan real estate conciergerie. You ALWAYS return valid JSON matching the schema. All strings on single lines. French language.' },
       { role: 'user', content: prompt }
     ],
     temperature: TEXT_TEMPERATURE,
@@ -618,10 +647,10 @@ async function generateScript() {
   if (!script.scenes || script.scenes.length < state.sceneCount) {
     debugLog('warn', 'SCRIPT', 'Scènes manquantes, génération auto');
     const scenes = [];
-    if (script.hook) scenes.push({ label: 'hook', text: script.hook, visual: 'bold opening shot' });
-    if (script.content) scenes.push({ label: 'content', text: script.content, visual: 'product demonstration' });
-    if (script.cta) scenes.push({ label: 'cta', text: script.cta, visual: 'call to action frame' });
-    while (scenes.length < state.sceneCount) scenes.push({ label: 'content', text: script.content || 'Continue the story', visual: 'product shot' });
+    if (script.hook) scenes.push({ label: 'hook', text: script.hook, visual: 'elegant Moroccan property exterior' });
+    if (script.content) scenes.push({ label: 'content', text: script.content, visual: 'beautiful riad interior, guests arriving' });
+    if (script.cta) scenes.push({ label: 'cta', text: script.cta, visual: 'founder speaking to camera' });
+    while (scenes.length < state.sceneCount) scenes.push({ label: 'content', text: script.content || 'Continue the story', visual: 'elegant Moroccan property' });
     script.scenes = scenes.slice(0, state.sceneCount);
   }
   state.script = script;
@@ -757,7 +786,7 @@ function renderScript() {
   const panel = $('script-panel'), card = $('script-card');
   if (!panel || !card || !state.script) return;
   const s = state.script;
-  let html = '<div style="font-family:var(--font-serif);font-size:1rem;color:var(--yellow-soft);text-align:center;margin-bottom:0.8rem;">Script</div>';
+  let html = '<div style="font-family:var(--font-serif);font-size:1rem;color:var(--yellow-soft);text-align:center;margin-bottom:0.8rem;">Script de la vidéo</div>';
   html += '<div class="script-section hook"><div class="script-label hook">🎯 Hook</div><div class="script-text">« ' + esc(s.hook) + ' »</div><div class="word-count">' + countWords(s.hook) + ' mots</div></div>';
   if (s.content) html += '<div class="script-section content"><div class="script-label content">📢 Contenu</div><div class="script-text">« ' + esc(s.content) + ' »</div><div class="word-count">' + countWords(s.content) + ' mots</div></div>';
   html += '<div class="script-section cta"><div class="script-label cta">👉 CTA</div><div class="script-text">« ' + esc(s.cta) + ' »</div><div class="word-count">' + countWords(s.cta) + ' mots</div></div>';
@@ -781,7 +810,7 @@ function addToGallery(url, label, index) {
 async function startGeneration() {
   if (state.isRunning) return;
   if (!getApiKey()) { showToast('Ajoutez votre clé API', 'error'); return; }
-  if (state.product.trim().length < 20) { showToast('Décrivez votre produit', 'error'); return; }
+  if (state.info.trim().length < 30) { showToast('Décrivez votre conciergerie', 'error'); return; }
 
   state.isRunning = true; state.stopRequested = false;
   state.script = null; state.images = []; state.videos = [];
@@ -793,8 +822,8 @@ async function startGeneration() {
   await activateWakeLock();
   const totalStart = Date.now();
   debugLog('info', 'START', '════════════════════════');
-  debugLog('info', 'CONFIG', 'Produit : ' + state.product.slice(0, 60) + '…');
-  debugLog('info', 'CONFIG', 'Scènes : ' + state.sceneCount + ' · Frames : ' + state.durationFrames);
+  debugLog('info', 'CONFIG', 'Conciergerie : ' + state.info.slice(0, 60) + '…');
+  debugLog('info', 'CONFIG', 'Scènes : ' + state.sceneCount + ' · Type : ' + state.videoType);
 
   try {
     await generateScript();
@@ -806,7 +835,7 @@ async function startGeneration() {
     if (state.stopRequested) throw new Error('Arrêt');
 
     await runVideosPhase();
-    setPhase('done', '✦ Publicité générée ✦', '');
+    setPhase('done', '✦ Vidéo générée ✦', '');
   } catch (e) {
     debugLog('error', 'GLOBAL', e.message);
   }
@@ -830,12 +859,6 @@ async function startGeneration() {
 // INIT
 // ══════════════════════════════════════════════════════════════════
 (function init() {
-  // Détection iOS
-  const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
-  const isStandalone = window.navigator.standalone === true || window.matchMedia('(display-mode: standalone)').matches;
-  if (isIOS && !isStandalone) setTimeout(() => $('ios-hint').classList.add('visible'), 500);
-
-  // Events
   $('api-save-btn').addEventListener('click', saveApiKey);
   $('api-key-input').addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); saveApiKey(); } });
   $('generate-btn').addEventListener('click', startGeneration);
@@ -846,14 +869,14 @@ async function startGeneration() {
       try {
         const res = await fetch(v.url); const blob = await res.blob();
         const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
-        a.download = 'adforge_' + Date.now() + '.mp4'; a.click();
+        a.download = 'conciergerie_' + Date.now() + '.mp4'; a.click();
         await sleep(500);
       } catch (e) { debugLog('error', 'DOWNLOAD', e.message); }
     }
   });
 
   document.querySelectorAll('[data-toggle]').forEach(h => h.addEventListener('click', () => $(h.dataset.toggle).classList.toggle('open')));
-  $('product-input').addEventListener('input', e => { state.product = e.target.value; updateGenerateBtn(); });
+  $('info-input').addEventListener('input', e => { state.info = e.target.value; updateGenerateBtn(); });
   $('ref-input').addEventListener('change', e => {
     const files = Array.from(e.target.files).filter(f => f.type.startsWith('image/'));
     files.forEach(f => {
@@ -864,7 +887,7 @@ async function startGeneration() {
     });
     e.target.value = '';
   });
-  $('platform-select').addEventListener('change', e => state.platform = e.target.value);
+  $('video-type-select').addEventListener('change', e => state.videoType = e.target.value);
   $('tone-select').addEventListener('change', e => state.tone = e.target.value);
   $('scene-count-select').addEventListener('change', e => { state.sceneCount = parseInt(e.target.value); updateGenerateBtn(); });
   $('duration-select').addEventListener('change', e => state.durationFrames = parseInt(e.target.value));
@@ -873,13 +896,13 @@ async function startGeneration() {
   $('debug-clear').addEventListener('click', (e) => { e.stopPropagation(); $('debug-body').innerHTML = ''; $('debug-count').textContent = '0'; });
   $('debug-collapse').addEventListener('click', (e) => { e.stopPropagation(); $('debug-panel').classList.toggle('collapsed'); });
 
-  function renderRefGrid() {
+  window.renderRefGrid = function() {
     $('ref-grid').innerHTML = state.referenceImages.map((u, i) => '<div class="ref-thumb"><img src="' + u + '"><button class="rm" data-i="' + i + '">✕</button></div>').join('');
     $('ref-grid').querySelectorAll('.rm').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); state.referenceImages.splice(+b.dataset.i, 1); renderRefGrid(); }));
-  }
+  };
 
   updateApiPanel();
-  debugLog('success', 'INIT', 'AdForge iOS prêt');
+  debugLog('success', 'INIT', 'Conciergerie Ads prêt');
   debugLog('info', 'INIT', 'Scènes : ' + state.sceneCount + ' × ' + (state.durationFrames / 24).toFixed(1) + 's = ' + (state.sceneCount * state.durationFrames / 24).toFixed(0) + 's');
 })();
 </script>
